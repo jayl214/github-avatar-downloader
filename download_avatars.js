@@ -16,7 +16,9 @@ if ( args.length !== 2 ){
 if ( GITHUB_USER == undefined || GITHUB_TOKEN == undefined ){
   throw new Error( 'Github username or token missing from .env file!' );
 };
-if
+if ( !fs.existsSync( './avatars' ) ){
+  fs.mkdirSync('./avatars');
+};
 
 
 function downloadImageByURL( url, filePath ){
