@@ -6,7 +6,8 @@ console.log('Welcome to the GitHub Avatar Downloader!');
 function getRepoContributors(repoOwner, repoName, cb) {
   request({url: `https://api.github.com/repos/${repoOwner}/${repoName}/contributors`, headers: {'User-Agent': 'GitHub Avatar Downloader - Student Project'} }, function(error, response, body){
   if(error) cb(error);
-  cb(error, body);
+  var bodyOBJ = JSON.parse(body)
+  for (i in bodyOBJ) cb(error, bodyOBJ[i].avatar_url );
   });
 
 }
