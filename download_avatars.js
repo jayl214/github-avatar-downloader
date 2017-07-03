@@ -1,9 +1,11 @@
+require('dotenv').config()
 var request = require( 'request' );
 var fs = require( 'fs' );
 var args = process.argv.slice(2);
 
-var GITHUB_USER = "jayl214";
-var GITHUB_TOKEN = "e1151f5070c807e6ea8ad019dccb2a812b90c2ea";
+var GITHUB_USER = process.env.GITHUB_USER;
+var GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+
 
 console.log( 'Welcome to the GitHub Avatar Downloader!' );
 if ( args.length !== 2 ){
