@@ -10,7 +10,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     var bodyOBJ = JSON.parse(body)
     for (i in bodyOBJ) {
       cb(error, bodyOBJ[i].avatar_url );
-      downloadImageByURL(bodyOBJ[i].avatar_url, `avatars/${i}.jpg`)
+      downloadImageByURL(bodyOBJ[i].avatar_url, `avatars/${bodyOBJ[i].login}.jpg`)
     }
   });
 
