@@ -8,9 +8,15 @@ var GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 
 console.log( 'Welcome to the GitHub Avatar Downloader!' );
+
+
 if ( args.length !== 2 ){
   throw new Error( 'need 2 args' );
 };
+if ( GITHUB_USER == undefined || GITHUB_TOKEN == undefined ){
+  throw new Error( 'Github username or token missing from .env file!' );
+};
+if
 
 
 function downloadImageByURL( url, filePath ){
